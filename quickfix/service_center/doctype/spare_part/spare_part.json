@@ -1,44 +1,78 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:device_type",
- "creation": "2026-02-25 12:03:45.451308",
+ "creation": "2026-02-26 18:50:29.714013",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "device_type",
-  "description",
-  "average_repair_hours"
+  "part_name",
+  "part_code",
+  "compatible_device_type",
+  "unit_cost",
+  "selling_price",
+  "stock_qty",
+  "reorder_level",
+  "is_active"
  ],
  "fields": [
   {
-   "bold": 1,
-   "fieldname": "device_type",
+   "fieldname": "part_name",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "in_list_view": 1,
-   "label": "Device Type",
-   "reqd": 1,
+   "label": "Part Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "part_code",
+   "fieldtype": "Data",
+   "label": "Part Code",
    "unique": 1
   },
   {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
+   "fieldname": "compatible_device_type",
+   "fieldtype": "Link",
+   "label": "Compatible Device Type",
+   "options": "Device Type"
   },
   {
-   "fieldname": "average_repair_hours",
-   "fieldtype": "Int",
-   "label": "Average Repair Hours"
+   "fieldname": "unit_cost",
+   "fieldtype": "Currency",
+   "label": "Unit Cost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "selling_price",
+   "fieldtype": "Currency",
+   "label": "Selling Price",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "stock_qty",
+   "fieldtype": "Float",
+   "label": "Stock Qty"
+  },
+  {
+   "default": "5",
+   "fieldname": "reorder_level",
+   "fieldtype": "Float",
+   "label": "Reorder Level"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-27 13:11:30.273035",
+ "modified": "2026-02-27 13:13:14.358106",
  "modified_by": "Administrator",
  "module": "Service Center",
- "name": "Device Type",
- "naming_rule": "By fieldname",
+ "name": "Spare Part",
  "owner": "Administrator",
  "permissions": [
   {
@@ -88,6 +122,5 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1
+ "states": []
 }
